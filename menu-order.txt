@@ -1,0 +1,74 @@
+
+1.  **Health Check:** 
+
+curl -i http://localhost:4000/health
+
+
+2.  **Create User:**
+
+curl -i -X POST http://localhost:4000/users -H "Content-Type: application/json" -d '{"name": "John Doe", "email": "john@example.com", "phone": "555-0100", "address": "123 Main St"}'
+
+
+3.  **List Users:**
+
+curl -i http://localhost:4000/users
+
+
+4.  **Get User by ID:** 
+
+curl -i http://localhost:4000/users/1
+
+
+5.  **Update User:**
+
+curl -i -X PUT http://localhost:4000/users/1 -H "Content-Type: application/json" -d '{"name": "John Updated", "email": "john@example.com", "phone": "555-9999", "address": "456 New Ave"}'
+
+
+6.  **Create Category:**
+
+ curl -i -X POST http://localhost:4000/categories -H "Content-Type: application/json" -d '{"name": "Main Courses", "description": "Hearty dinner options"}'
+
+
+7.  **List Categories:**
+
+curl -i http://localhost:4000/categories
+
+
+8.  **Create Menu Item:**
+
+curl -i -X POST http://localhost:4000/menu-items -H "Content-Type: application/json" -d '{"category_id": 1, "name": "Burger", "description": "Classic beef burger", "price": 12.99, "is_available": true}'
+
+
+9.  **List Menu Items:** 
+
+curl -i http://localhost:4000/menu-items
+
+
+10. **Update Menu Item Price:**
+
+curl -i -X PUT http://localhost:4000/menu-items/1 -H "Content-Type: application/json" -d '{"name": "Burger", "price": 14.99, "is_available": true}'
+
+
+11. **Create Order:** 
+
+curl -i -X POST http://localhost:4000/orders -H "Content-Type: application/json" -d '{"user_id": 1, "total_amount": 14.99, "status": "pending", "payment_method": "cash", "delivery_address": "123 Main St"}'
+
+
+12. **Add Item to Order:** 
+
+curl -i -X POST http://localhost:4000/orders/1/items -H "Content-Type: application/json" -d '{"menu_item_id": 1, "quantity": 1, "price": 14.99}'
+
+
+13. **List Items in Order:** 
+
+curl -i http://localhost:4000/orders/1/items
+
+
+14. **Update Order Status:** 
+
+curl -i -X PUT http://localhost:4000/orders/1/status -H "Content-Type: application/json" -d '{"status": "preparing"}'
+
+
+15. **Delete Category:** 
+
+curl -i -X DELETE http://localhost:4000/categories/1
